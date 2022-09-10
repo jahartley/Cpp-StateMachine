@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<link rel="preload" href="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" as="script" type="text/javascript" >
+<head>
+    <style type='text/css'>
+        .blank-background{background-color:#fff}html,div,span,applet,object,iframe,a,abbr,acronym,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,fieldset,form,label,table,tbody,tfoot,thead,tr,th,td,li,ol,ul{margin:0;padding:0;border:0}html{font-size:16px;-webkit-font-smoothing:antialiased;font-smooth:always}body,p,h1,h2,h3,h4,h5,h6,li,tr,td,th,dd,dt{font-family:"Segoe UI",Arial,Sans-Serif;font-size:16px;line-height:1.4;color:#111}body{margin:0}h1,h3,h4,h5,th{font-weight:bold}h1{color:#333;padding:0;margin:0 0 7px;text-align:left}h2{margin:20px 0 11px;padding:0;padding-bottom:10px;color:#333}h3{color:#f90}h1{font-size:38px;font-weight:400}h2{font-size:29px;font-weight:400}h3{font-size:19px;font-weight:normal}h4{font-size:17px}pre{color:#000;background-color:#fbedbb;padding:6px;font:14px Consolas,monospace,mono;white-space:pre;overflow:auto;border:solid 1px #fbedbb;-moz-tab-size:4;-o-tab-size:4;-webkit-tab-size:4;tab-size:4}code{color:#900;font:15px Consolas,monospace,mono}table{background-color:Transparent}img{-ms-interpolation-mode:bicubic}a{text-decoration:none;color:#005782}a:visited{color:#800080}a:not([href]){color:inherit;text-decoration:none}input[type="text"],input[type="url"],input[type="search"],input[type="email"],select,textarea{border:1px solid #d7d7d7;font-size:16px;padding:5px}input[type=radio]{border:none}a.button,a.button-large,.button,.button-large{color:#fff;background-color:#e08900;border:1px solid #ccc;text-decoration:none;white-space:nowrap;font-size:100%;padding:4px;cursor:pointer;border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px}table.small-text td,ul.small-text li,ol.small-text li,.small-text{font-size:14px}.invisible{display:none}.subdue,.subdue li,tr.subdue td{color:#808080}.bold{font-weight:bold}.align-left{text-align:left}.align-right{text-align:right}.align-center{text-align:center}.float-right{float:right}.float-left{float:left}.sticky{position:sticky;top:0}.extended{width:100%;box-sizing:border-box}.padded-top{padding-top:20px}.tight{margin:0;padding:0}.nowrap{white-space:nowrap}.fixed-layout{table-layout:fixed}.clip-text{text-overflow:ellipsis;overflow:hidden;white-space:nowrap}.raised{background-color:#fff8df;border:1px solid #ccc;-moz-box-shadow:4px 4px 16px 1px rgba(0,0,0,.25);-webkit-box-shadow:4px 4px 16px 1px rgba(0,0,0,.25);box-shadow:4px 4px 16px 1px rgba(0,0,0,.25)}ol,ul{padding-left:40px;margin:10px 0}ol.compact li,ul.compact li,ol li.compact,ul li.compact{font-size:14px}ul.download{margin-top:25px}ul.download li,ul li.download,ul.Download li,ul li.Download{background:url("/images/download24.png") no-repeat scroll left center transparent;font-weight:bold;list-style-type:none;margin:0 0 6px -40px;padding:0 0 1px 30px;vertical-align:middle}.callout{margin:20px 0;background-color:#ffffe1;color:#333;border:1px solid #ccc;padding:15px;border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px}.trace{padding:20px;background-color:#eee;color:#333;border:1px solid #f00;font-size:13px}textarea,input[type="text"],input[type="button"],input[type="submit"]{-webkit-appearance:none;border-radius:0}.container-content{background-color:#fff;position:relative;zoom:1;padding:0 9px;cursor:default}.container-content-wrap{margin:auto;max-width:1270px}.container-content pre,.container-code pre,.answer pre{white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word;_white-space:pre;word-break:break-word;-ms-word-break:break-word}.flex-container{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex}.flex-extend{justify-content:space-between}.flex-wrap{flex-wrap:wrap}.flex-item{-webkit-box-flex:1;-moz-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1}.flex-item-tight{flex:0 1 auto}.hover-container{display:block;position:relative}.clearfix:after,.container:after{display:block;content:'.';visibility:hidden;height:0;clear:both}.clearfix,.container{display:inline-block;display:block}.access-link,.access-link img{position:absolute;top:0;left:0;width:1px;height:1px;z-index:101;border-style:none;margin-top:-1px;overflow:hidden}.site-top-menu{white-space:nowrap;position:absolute;z-index:101;width:100%}.site-top-menu .main-content{width:100%}.site-top-menu .main-content .memberbar{margin-left:90px;margin-right:10px}.site-top-menu.fixed .main-content{margin:auto;max-width:1270px}.site-header{background-image:url('/App_Themes/CodeProject/Img/logo135-bg.gif');white-space:nowrap;overflow:hidden}.site-header .main-content{position:relative;overflow:hidden;white-space:nowrap}.site-header .logo{display:inline-block}.site-header .promo{display:inline-block;position:absolute;top:33px;right:0}.site-header.fixed .main-content{margin:auto;max-width:1270px}.sub-headerbar{padding-right:9px;position:relative;margin:auto;max-width:1270px}.sub-headerbar-divider{margin-left:10px;height:1px;border-bottom:1px solid #ccc;position:absolute;bottom:2px;left:0;right:9px}.memberbar{height:25px;padding-top:10px;color:#999;font-size:14px}.memberbar a{color:#808080;font-size:14px}div.navbar{white-space:nowrap}.navmenu{background:#fff;color:#4d4d4d;padding:0;margin:0;list-style:none;height:25px}.navmenu ul,.navmenu li{margin:0;padding:0}.navmenu .has-submenu{position:absolute;right:5px;padding-left:10px}.navmenu ul,.navmenu>li.open:hover>a,.navmenu>li.open>a:active{border:1px solid #ccc;border-bottom-color:#fff}.navmenu>li{margin:0 11px 2px 2px}.navmenu>li>a{padding:2px 7px 6px 7px;border:1px solid transparent;font-weight:bold}.navmenu a{display:block;float:left;color:#666;background:#fff;font-size:17px;padding:0 9px;text-decoration:none;white-space:nowrap}.navmenu a.fly{white-space:nowrap}.navmenu ul{background:#fff;position:absolute;left:-9999px;top:-9999px;list-style:none}.navmenu li{float:left;color:#4d4d4d}.navmenu li.last{height:9px}.navmenu li>a:active,.navmenu li:hover,.navmenu li:hover>a,.navmenu li:hover.heading,.navmenu li a.selected{position:relative;color:#fff;background-color:#f90}.navmenu li ul{border-bottom:5px solid #f90}.navmenu li li{float:none}.navmenu li li a{float:none;font-size:16px;font-weight:normal}.navmenu li li a.fly{color:#4d4d4d;background-color:#fff;padding:2px 20px}.navmenu li li a.break{margin-bottom:15px}.navmenu li li a.highlight1,.navmenu li li a.highlight1:active,.navmenu li li a.highlight1:hover{background-color:#090}.navmenu li li a.highlight2,.navmenu li li a.highlight2:active,.navmenu li li a.highlight2:hover{background-color:#f90}.navmenu li li a.highlight3,.navmenu li li a.highlight3:active,.navmenu li li a.highlight3:hover{background-color:#000}.navmenu li li a.highlight1,.navmenu li li a.highlight2,.navmenu li li a.highlight3{color:#fff;font-size:16px;margin:5px 0;padding:9px 20px}.site-footer{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;padding-top:5px;width:100%;font-size:13px;color:#999}.site-footer .align-left,.site-footer .align-center,.site-footer .align-right{-webkit-box-flex:1;-moz-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1}.site-footer .align-left{flex:1 0 100px}.site-footer .align-center{flex:0 1 0%;white-space:nowrap}.site-footer .align-right{flex:1 0 100px}.site-footer .page-width .active{border-bottom:2px solid #f90}.searchbar{padding:0}.searchbar .search{margin-bottom:4px;padding:2px 5px 0;border:1px solid #ccc}.searchbar .search.subdue{color:#ccc}.searchbar input.search{width:190px;border:none;font-size:13px;padding:4px 2px}.searchbar .search-advanced{padding:8px;width:203px;z-index:1000;background-color:#fff;border:solid 1px #ccc;position:absolute;top:-4px;right:0}.searchbar .popup{display:none}.search td{background-color:#fff}.article-container-parts{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex}.article-container{-webkit-box-flex:1;-moz-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1;background-color:#fff;color:#111;zoom:1;position:relative;max-width:100%;min-height:675px}.article-container .article{margin:0 20px 0 10px;line-height:143%}.article-container span.stats{margin-left:30px}.article-left-sidebar{width:120px;min-width:120px;min-height:400px;font-size:14px;border-right:1px solid #f2f2f2;padding:0}.article-left-sidebar .article-left-sidebar-inner{width:120px;min-width:120px}.article-left-sidebar .tabs>div{padding:5px 0 5px 10px}.article-left-sidebar .selected{font-weight:bold;background:transparent url("/images/right-selected.gif") no-repeat scroll right 9px}.article-left-sidebar h4{color:#f90;font-size:14px;font-weight:bold}.article-left-sidebar .stats div div div{padding:0 0 10px 10px;color:#666}.article-right-sidebar{width:300px;margin-left:10px;font-size:14px}.article-right-sidebar .header{font-size:22px;color:#fff;background-color:#f90;padding:8px;font-weight:400;margin:0}.article-right-sidebar .reading-list-toc{max-height:250px;overflow-y:auto;padding-right:6px;margin-top:5px}.article-right-sidebar .reading-list-toc .count{font-weight:normal;font-size:13px}.article-right-sidebar .reading-list-toc .title{font-size:16px}.article-right-sidebar .content-list-item{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;justify-content:space-between;font-size:14px;margin:4px 0}.article-right-sidebar .content-list-item .count{width:15%;padding:0}.article-right-sidebar .content-list-item .title{width:85%;font-weight:normal}.article-right-sidebar .gototop{text-align:center;padding:10px 0;opacity:0;-webkit-transition:opacity .3s linear 0ms;-moz-transition:opacity .3s linear 0ms;-o-transition:opacity .3s linear 0ms;transition:opacity .3s linear 0ms}.container-content .edit-links{margin:21px 0 0 10px}.article-summary{padding:0 10px 0 10px;overflow:hidden}.article h1{margin:0 0 15px 0}.article h2{color:#f90}.article pre{overflow:auto}.article .header .title{color:#808080}.article .header .author{font-weight:bold;min-width:100px}.article .header .author a{color:#808080}.article .header .avatar{max-width:48px;max-height:48px;overflow:unset}.article .header .avatar-wrap{width:48px;height:48px;margin-right:10px;text-align:center}.article .header .date{white-space:nowrap}.article .header .license{margin-left:15px}.article .header .stats{margin-left:30px}.article img.lazyload,.article img.lazyloading{opacity:0}.article img.lazyloaded{opacity:1;transition:opacity 300ms}.article .summary{color:#808080;padding:40px 0 15px 0}.article .text{padding-top:10px}.article .reading-list-nav{border-top:1px #dedede solid;border-bottom:1px #dedede solid;padding:10px 0}.article .reading-list-nav .prev{padding-left:20px}.article .reading-list-nav .next{margin-left:5px;padding-right:20px;text-align:right}.article-nav{text-align:right;margin-top:21px;vertical-align:middle;line-height:15px}.msg-728x90{width:728px;height:90px;overflow:hidden}.msg-300x250{width:300px;height:250px;overflow:hidden}.content-list{margin-bottom:17px}.content-list .count{font-weight:bold;font-size:16px;color:#f90;padding:3px;text-align:center}.content-list-item{margin:10px 0}.content-list-item .title{font-size:14px;font-weight:bold;padding:0 0}.content-list-item .title a{color:#005782}.content-list-item .title a:visited{color:#800080}.tags{line-height:190%}.tags .t{background:none repeat scroll 0 0 transparent;border:1px solid #fbedbb;border-radius:12px 0 0 12px;line-height:1.4;padding:0 2px 2px 3px;position:relative;text-decoration:none;margin:2px 5px 4px 0;white-space:nowrap}.tags .t a{color:#666;display:inline-block;margin-right:3px;padding-left:5px;text-overflow:ellipsis}.container-breadcrumb{font-size:14px;margin-top:7px;color:#808080;margin:12px 0 35px}.container-breadcrumb a{color:#808080}.pre-lang{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;background-color:#fbedbb;justify-content:space-between;padding:4px 8px;margin-top:5px;color:#999;border-bottom:solid 1px #ffd044}.code-comment{color:#008000;font-style:italic}.code-keyword{color:#00f}.code-sdkkeyword{color:#399}.code-string{color:#800080}.code-attribute{color:#f00}.code-leadattribute{color:#800000}.pre-action-link{font-size:13px;color:#999}.pre-action-link span{cursor:pointer;margin:0;-webkit-transition:color .1s linear;-moz-transition:color .1s linear;-o-transition:color .1s linear;transition:color .1s linear}.speech-bubble-container-down,.speech-bubble-container-up,.speech-bubble-container-up-right,.speech-bubble-container-left,.speech-bubble-container-right{position:relative}.ie .speech-bubble-container-up,.firefox .speech-bubble-container-up,.chrome .speech-bubble-container-up,.ie .speech-bubble-container-up-right,.firefox .speech-bubble-container-up-right,.chrome .speech-bubble-container-up-right{margin-top:-4px}.tooltip{position:relative;text-decoration:none}.tooltip .speech-bubble-container-up,.tooltip .speech-bubble-container-down,.tooltip .speech-bubble-container-left,.tooltip .speech-bubble-container-right,.tooltip .speech-bubble-container-up-right,.tooltip .tooltip-flyout{display:none;opacity:0;-webkit-transition:opacity .5s linear 0ms;-moz-transition:opacity .5s linear 0ms;-o-transition:opacity .5s linear 0ms;transition:opacity .5s linear 0ms}.tooltip-flyout{position:relative;border:1px solid #ccc;color:#666;background-color:#fff;margin:15px;z-index:2147483646;white-space:normal;font-weight:normal;text-align:left;cursor:text;width:175px;-moz-box-shadow:4px 4px 16px 1px rgba(0,0,0,.25);-webkit-box-shadow:4px 4px 16px 1px rgba(0,0,0,.25);box-shadow:4px 4px 16px 1px rgba(0,0,0,.25)}.bottom-promo{height:90px;margin-top:10px;overflow:hidden}.bottom-promo .msg-728x90{width:728px;margin:0 auto}.msg-728x90{overflow:hidden;position:relative;height:90px;min-width:728px}body .msg-728x90{*float:right}body .bottom-promo .msg-728x90{*float:none}table.forum{table-layout:fixed;margin:0 0 20px 0;padding:0;width:100%}.forum table{border-collapse:separate}.forum .header1,.forum .header1 TD{color:#333;font-size:14px;vertical-align:middle}.forum .header2,.forum .header2 TD{color:#fff;background-color:#f90;font-size:14px;vertical-align:middle}.forum .header2 input,.forum .header2 TD input,.forum .header2 select,.forum .header2 TD select{padding:2px}.forum .button{border:1px solid #fc6;margin:1px}.forum .searchbar{border:1px solid #ccc;padding:4px 0 0 0;margin:3px 0}.forum .searchbar .search{width:200px}.forum .searchbar input[type=image]{vertical-align:middle}.forum .dropdown{background-color:#fffdfa;font-size:95%;margin-left:5px}.forum .footer,.forum .footer td,.forum .navbar,.forum .navbar td{font-size:14px;padding:8px 0;border:0;border-top:1px solid #808080}.author-wrapper{position:relative}.author-wrapper .profile-pic{border:1px solid #333;margin:0 13px 0 0;padding:10px;-moz-box-shadow:3px 3px 5px 1px rgba(0,0,0,.2);-webkit-box-shadow:3px 3px 5px 1px rgba(0,0,0,.2);box-shadow:3px 3px 5px 1px rgba(0,0,0,.2);max-height:100px}.author-wrapper .container-member .author{font-size:29px;color:#333;font-weight:600}.member-signin{font-size:14px}.member-signin input[type="text"],.member-signin input[type="email"],.member-signin input[type="password"],.member-signin input[type="button"],.member-signin input[type="submit"],.member-signin button,.member-signin select{border:1px solid #ccc;padding:4px;width:190px;margin-bottom:10px}.member-signin.tooltip>span{border:1px solid transparent;padding:2px 6px 4px 6px;z-index:503}.member-signin.tooltip .tooltip-flyout{border:1px solid #ccc;border-bottom:5px solid #f90;padding:10px;width:200px;position:absolute;top:3px;left:-163px;background-color:#fff}.rating-container .rating-prompt{padding-right:5px;white-space:nowrap;line-height:25px;margin-right:2px;font-weight:bold;color:#808080}.rating-container .rating-votes{margin-left:5px}.rating-container.large-stars,.rating-container.medium-stars,.rating-container.small-stars{margin-left:7px}.rating-container.large-stars .rating-votes,.rating-container.large-stars .rating-prompt,.rating-container.large-stars .rating-poor,.rating-container.large-stars .rating-good{line-height:25px}.desktop-only{display:inherit}.tablet-only,.tablet-block-only{display:none}.mobile-only,.mobile-block-only{display:none}.desktop-only.tablet-only{display:inherit}.tablet-only,.mobile-only{display:none}.tablet-only.desktop-only{display:inherit}.rrssb-buttons,.rrssb-buttons li,.rrssb-buttons li a{-moz-box-sizing:border-box;box-sizing:border-box}.clearfix{*zoom:1}.clearfix:after{clear:both}.clearfix:before,.clearfix:after{content:" ";display:table}.rrssb-buttons{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;height:40px;margin:0;padding:0;width:100%}.rrssb-buttons li{float:left;height:100%;list-style:none;margin:0;padding:0 2.5px;line-height:13px}.rrssb-buttons li.email a{background-color:#0a88ff}.rrssb-buttons li.facebook a{background-color:#306199}.rrssb-buttons li.linkedin a{background-color:#007bb6}.rrssb-buttons li.twitter a{background-color:#26c4f1}.rrssb-buttons li.reddit a{background-color:#8bbbe3}.rrssb-buttons li.pinterest a{background-color:#b81621}.rrssb-buttons li.compact{padding:0 4.5px}.rrssb-buttons li.compact a{border-radius:50%;padding:0 7px 0 32px}.rrssb-buttons li.compact a .icon{left:7px;top:-3px;width:5%;transform:scale(.85)}.rrssb-buttons li.compact a .icon svg{height:auto;width:auto}.rrssb-buttons li a{background-color:#ccc;border-radius:3px;display:block;font-size:11px;font-weight:bold;height:100%;padding:11px 7px 12px 27px;position:relative;text-align:center;text-decoration:none;text-transform:uppercase;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;width:100%;-webkit-transition:background-color .2s ease-in-out;-moz-transition:background-color .2s ease-in-out;-o-transition:background-color .2s ease-in-out;transition:background-color .2s ease-in-out}.rrssb-buttons li a .icon{display:block;height:100%;left:10px;padding-top:9px;position:absolute;top:0;width:10%}.rrssb-buttons li a .icon svg{height:17px;width:17px}.rrssb-buttons li a .icon svg path,.rrssb-buttons li a .icon svg polygon{fill:#fff}
+        </style>
+        <link rel="stylesheet" type="text/css" href="https://codeproject.freetls.fastly.net/App_Themes/CodeProject/Css/Main.min.css?dt=2.8:2022-08-31:1" media="none" onload="if(media!='all')media='all'">
+        <noscript><link rel="stylesheet" type="text/css" href="https://codeproject.freetls.fastly.net/App_Themes/CodeProject/Css/Main.min.css?dt=2.8:2022-08-31:1"></noscript>
+        
+</head>
+<body>
+
+<div class="article">
+
+<h2>Introduction</h2>
+
+<p>In 2000, I wrote an article entitled "<em>State Machine Design in C++</em>" for C/C++ Users Journal (R.I.P.). Interestingly, that old article is still available and (at the time of writing this article) the #1 hit on Google when searching for C++ state machine. The article was written over 15 years ago, but I continue to use the basic idea in numerous projects. It's compact, easy to understand and, in most cases, has just enough features to accomplish what I need.</p>
+
+<p>This article provides a new implementation with updated features at the slight expense of a bit more code. I'll also correct the errors in the original implementation because if you're really tight on storage, it will still be a viable solution. Both designs are table driven suitable for any platform, embedded or PC, with any C++ compiler.</p>
+
+<p>Why another state machine design? Certainly, by now, there's an existing implementation out there that can be used, right? Maybe. On occasion, I'll try a new state machine and find it doesn't fit my needs for one reason or another. For me, the problem usually boils down to one or more of the following:</p>
+
+<ol>
+<li><strong>Too large</strong> – the resulting implementation takes too much code space to justify on an embedded platform</li>	<li><strong>Too complex</strong> – excessive templates or requires adoption of a complete framework to use the state machine</li>	<li><strong>No compiler support</strong> – relies upon new C++ language features not supported by the compiler</li>	<li><strong>High learning curve</strong> – some require quite a lot of effort in this regard</li>	<li><strong>Difficult syntax</strong> – non-intuitive state machine expression with hard to diagnose compiler errors</li>	<li><strong>External libraries</strong> – relies upon external libraries that add size or aren't supported on the platform</li>	<li><strong>Too many features</strong> – full UML compliance isn't required and therefore exceeds the basic needs of the problem at hand</li>	<li><strong>No event data</strong> – can't send unique event data to a state function</li>	<li><strong>Central event handler</strong> – a single event handling function and a <code>switch</code> statement handles events for each class</li>	<li><strong>No type safety</strong> – requires manual typecasting the event data based on an enumeration</li>	<li><strong>Limited transition rules</strong> – no support for event ignored and can't happen event transitions</li>	<li><strong>No thread-safety</strong> – the code is not thread-safe</li></ol>
+
+<p>Don't get me wrong, some implementations are quite impressive and suitable for many different projects. Every design has certain tradeoffs and this one is no different. Only you can decide if this one meets your needs or not. I'll try to get you bootstrapped as quickly as possible through this article and sample code. This state machine has the following features:</p>
+
+<ol>
+<li><strong>Compact</strong> – The <code>StateMachine</code> class is not a template – only 448 bytes of code on Windows. Templates are used sparingly.</li>	<li><strong>Transition tables</strong> – Transition tables precisely control state transition behavior.</li>	<li><strong>Events</strong> – Every event is a simple public instance member function with any argument types.</li>	<li><strong>State action</strong> – Every state action is a separate instance member function with a single, unique event data argument if desired.</li>	<li><strong>Guards/entry/exit actions</strong> – Optionally a state machine can use guard conditions and separate entry/exit action functions for each state.</li>	<li><strong>State machine inheritance</strong> – Supports inheriting states from a base state machine class.</li>	<li><strong>State function inheritance</strong> – Supports overriding a state function within a derived class.</li>	<li><strong>Macros</strong> – Optional multiline macro support simplifies usage by automating the code "machinery".</li>	<li><strong>Type safe</strong> – Compile time checks catch mistakes early. Runtime checks for the other cases.</li>	<li><strong>Thread-safe</strong> – Adding software locks to make the code thread-safe is easy.</li></ol>
+
+<p>This state machine design is not trying to achieve a full UML feature set. It is also not a Hierarchical State Machine (HSM). Instead, its goal is to be relatively compact, portable, and easy to use traditional Finite State Machine (FSM) with just enough unique features to solve many different problems.</p>
+
+<p>The article is not a tutorial on the best design decomposition practices for software state machines. I'll be focusing on state machine code and simple examples with just enough complexity to facilitate understanding the features and usage.</p>
+
+<p>See the article <a href="https://www.codeproject.com/Articles/1275479/State-Machine-Design-in-C">State Machine Design in C</a>&nbsp;for a C language&nbsp;implementation of this state machine.&nbsp;</p>
+
+<h2>Background</h2>
+
+<p>A common design technique in the repertoire of most programmers is the venerable finite state machine (FSM). Designers use this programming construct to break complex problems into manageable states and state transitions. There are innumerable ways to implement a state machine.</p>
+
+<p>A <code>switch</code> statement provides one of the easiest to implement and most common version of a state machine. Here, each case within the <code>switch</code> statement becomes a state, implemented something like:</p>
+
+<div class="pre-lang" id="premain254150"><div>C++</div><div class="pre-action-link"><span id="copycode254150" class="copy-code" data-index="254150" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre254150" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">switch</span> (currentState) {
+<span class="code-keyword">case</span> ST_IDLE:
+<span class="code-comment">// do something in the idle state
+</span>       <span class="code-keyword">break</span>;
+<span class="code-keyword">case</span> ST_STOP:
+<span class="code-comment">// do something in the stop state
+</span>       <span class="code-keyword">break</span>;
+<span class="code-comment">// etc...
+</span>}</pre>
+
+<p>This method is certainly appropriate for solving many different design problems. When employed on an event driven, multithreaded project, however, state machines of this form can be quite limiting.</p>
+
+<p>The first problem revolves around controlling what state transitions are valid and which ones are invalid. There is no way to enforce the state transition rules. Any transition is allowed at any time, which is not particularly desirable. For most designs, only a few transition patterns are valid. Ideally, the software design should enforce these predefined state sequences and prevent the unwanted transitions. Another problem arises when trying to send data to a specific state. Since the entire state machine is located within a single function, sending additional data to any given state proves difficult. And lastly, these designs are rarely suitable for use in a multithreaded system. The designer must ensure the state machine is called from a single thread of control.</p>
+
+<h2>Why Use a State Machine?</h2>
+
+<p>Implementing code using a state machine is an extremely handy design technique for solving complex engineering problems. State machines break down the design into a series of steps, or what are called states in state-machine lingo. Each state performs some narrowly defined task. Events, on the other hand, are the stimuli, which cause the state machine to move, or transition, between states.</p>
+
+<p>To take a simple example, which I will use throughout this article, let's say we are designing motor-control software. We want to start and stop the motor, as well as change the motor's speed. Simple enough. The motor control events to be exposed to the client software will be as follows:</p>
+
+<ol>
+<li><strong>Set Speed</strong> – sets the motor going at a specific speed</li>	<li><strong>Halt</strong> – stops the motor</li></ol>
+
+<p>These events provide the ability to start the motor at whatever speed desired, which also implies changing the speed of an already moving motor. Or we can stop the motor altogether. To the motor-control class, these two events, or functions, are considered external events. To a client using our code, however, these are just plain functions within a class.</p>
+
+<p>These events are not state machine states. The steps required to handle these two events are different. In this case, the states are:</p>
+
+<ol>
+<li><strong>Idle</strong> — the motor is not spinning but is at rest
+
+<ul>
+<li>Do nothing</li>	</ul>
+</li>	<li><strong>Start</strong> — starts the motor from a dead stop
+<ul>
+<li>Turn on motor power</li>		<li>Set motor speed</li>	</ul>
+</li>	<li><strong>Change Speed</strong> — adjust the speed of an already moving motor
+<ul>
+<li>Change motor speed</li>	</ul>
+</li>	<li><strong>Stop</strong> — stop a moving motor
+<ul>
+<li>Turn off motor power</li>		<li>Go to the Idle state</li>	</ul>
+</li></ol>
+
+<p>As can be seen, breaking the motor control into discreet states, as opposed to having one monolithic function, we can more easily manage the rules of how to operate the motor.</p>
+
+<p>Every state machine has the concept of a "current state." This is the state the state machine currently occupies. At any given moment in time, the state machine can be in only a single state. Every instance of a particular state machine class can set the initial state during construction. That initial state, however, does not execute during object creation. Only an event sent to the state machine causes a state function to execute.</p>
+
+<p>To graphically illustrate the states and events, we use a state diagram. Figure 1 below shows the state transitions for the motor control class. A box denotes a state and a connecting arrow indicates the event transitions. Arrows with the event name listed are external events, whereas unadorned lines are considered internal events. (I cover the differences between internal and external events later in the article.)</p>
+
+<p><img alt="Image 1" src="Motor.png" style="width: 308px; height: 381px"></p>
+
+<div class="Caption">Figure 1: Motor state diagram</div>
+
+<p>As you can see, when an event comes in the state transition that occurs depends on state machine's current state. When a <code>SetSpeed</code> event comes in, for instance, and the motor is in the <code>Idle</code> state, it transitions to the <code>Start</code> state. However, that same <code>SetSpeed</code> event generated while the current state is <code>Start</code> transitions the motor to the <code>ChangeSpeed</code> state. You can also see that not all state transitions are valid. For instance, the motor can't transition from <code>ChangeSpeed</code> to <code>Idle</code> without first going through the <code>Stop</code> state.</p>
+
+<p>In short, using a state machine captures and enforces complex interactions, which might otherwise be difficult to convey and implement.</p>
+
+<h2>Internal and External Events</h2>
+
+<p>As I mentioned earlier, an event is the stimulus that causes a state machine to transition between states. For instance, a button press could be an event. <code>Event</code>s can be broken out into two categories: external and internal. The external event, at its most basic level, is a function call into a state-machine object. These functions are <code>public</code> and are called from the outside or from code external to the state-machine object. Any thread or task within a system can generate an external event. If the external event function call causes a state transition to occur, the state will execute synchronously within the caller's thread of control. An internal event, on the other hand, is self-generated by the state machine itself during state execution.</p>
+
+<p>A typical scenario consists of an external event being generated, which, again, boils down to a function call into the class's <code>public</code> interface. Based upon the event being generated and the state machine's current state, a lookup is performed to determine if a transition is required. If so, the state machine transitions to the new state and the code for that state executes. At the end of the <code>state</code> function, a check is performed to determine whether an internal event was generated. If so, another transition is performed and the new state gets a chance to execute. This process continues until the state machine is no longer generating internal events, at which time the original external event function call returns. The external event and all internal events, if any, execute within the caller's thread of control.</p>
+
+<p>Once the external event starts the state machine executing, it cannot be interrupted by another external event until the external event and all internal events have completed execution if locks are used. This run to completion model provides a multithread-safe environment for the state transitions. Semaphores or mutexes can be used in the state machine engine to block other threads that might be trying to be simultaneously access the same object. See source code function <code>ExternalEvent()</code> comments for where the locks go.</p>
+
+<h2>Event Data</h2>
+
+<p>When an event is generated, it can optionally attach event data to be used by the state function during execution. Once the state has completed execution, the event data is considered used up and must be deleted. Therefore, any event data sent to a state machine must be created on the heap, via operator new, so that the state machine can delete it once used. In addition, for our particular implementation the event data must inherit from the <code>EventData </code>base class. This gives the state machine engine a common base class for which to delete all event data.</p>
+
+<div class="pre-lang" id="premain898866"><div>C++</div><div class="pre-action-link"><span id="copycode898866" class="copy-code" data-index="898866" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre898866" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">class</span> EventData 
+{
+public:
+<span class="code-keyword">virtual</span> ~EventData() {}
+};</pre>
+
+<p>The state machine implementation now has a build option that removes the requirement to create external event data on the heap. See the <strong>External event no heap data</strong> section for details.</p>
+
+<h2>State Transitions</h2>
+
+<p>When an external event is generated, a lookup is performed to determine the state transition course of action. There are three possible outcomes to an event: new state, event ignored, or cannot happen. A new state causes a transition to a new state where it is allowed to execute. Transitions to the existing state are also possible, which means the current state is re-executed. For an ignored event, no state executes. However, the event data, if any, is deleted. The last possibility, cannot happen, is reserved for situations where the event is not valid given the current state of the state machine. If this occurs, the software faults.</p>
+
+<p>In this implementation, internal events are not required to perform a validating transition lookup. The state transition is assumed to be valid. You could check for both valid internal and external event transitions, but in practice, this just takes more storage space and generates busywork for very little benefit. The real need for validating transitions lies in the asynchronous, external events where a client can cause an event to occur at an inappropriate time. Once the state machine is executing, it cannot be interrupted. It is under the control of the class's <code>private</code> implementation, thereby making transition checks unnecessary. This gives the designer the freedom to change states, via internal events, without the burden of updating transition tables.</p>
+
+<h2>StateMachine Class</h2>
+
+<p>Two base classes are necessary when creating your own state machine: <code>StateMachine </code>and <code>EventData</code>. A class inherits from <code>StateMachine </code>to obtain the necessary mechanisms to support state transitions and event handling. The <code>StateMachine </code>header also contains various preprocessor multiline macros to ease implementation of the state machine (explained later in the article). To send unique data to the state functions, the structure must inherit from the <code>EventData </code>base class.</p>
+
+<p>The state machine source code is contained within the <em>StateMachine.cpp</em> and <em>StateMachine.h</em> files (see attached <em>StateMachine.zip</em>). The code below shows the class declaration.</p>
+
+<div class="pre-lang" id="premain632615"><div>C++</div><div class="pre-action-link"><span class="code-collapse" data-index="632615" id="preShrink632615">Shrink ▲</span> &nbsp; <span id="copycode632615" class="copy-code" data-index="632615" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre632615" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">class</span> StateMachine 
+{
+public:
+<span class="code-keyword">enum</span> { EVENT_IGNORED = <span class="code-digit">0xFE</span>, CANNOT_HAPPEN };
+
+StateMachine(BYTE maxStates, BYTE initialState = <span class="code-digit">0</span>);
+<span class="code-keyword">virtual</span> ~StateMachine() {}
+
+BYTE GetCurrentState() { <span class="code-keyword">return</span> m_currentState; }
+
+protected:
+<span class="code-keyword">void</span> ExternalEvent(BYTE newState, <span class="code-keyword">const</span> EventData* pData = NULL);
+<span class="code-keyword">void</span> InternalEvent(BYTE newState, <span class="code-keyword">const</span> EventData* pData = NULL);
+
+private:
+<span class="code-keyword">const</span> BYTE MAX_STATES;
+BYTE m_currentState;
+BYTE m_newState;
+BOOL m_eventGenerated;
+<span class="code-keyword">const</span> EventData* m_pEventData;
+
+<span class="code-keyword">virtual</span> <span class="code-keyword">const</span> StateMapRow* GetStateMap() = <span class="code-digit">0</span>;
+<span class="code-keyword">virtual</span> <span class="code-keyword">const</span> StateMapRowEx* GetStateMapEx() = <span class="code-digit">0</span>;
+
+<span class="code-keyword">void</span> SetCurrentState(BYTE newState) { m_currentState = newState; }
+
+<span class="code-keyword">void</span> StateEngine(<span class="code-keyword">void</span>);     
+<span class="code-keyword">void</span> StateEngine(<span class="code-keyword">const</span> StateMapRow* <span class="code-keyword">const</span> pStateMap);
+<span class="code-keyword">void</span> StateEngine(<span class="code-keyword">const</span> StateMapRowEx* <span class="code-keyword">const</span> pStateMapEx);
+};</pre>
+
+<p><code>StateMachine </code>is the base class used for handling events and state transitions. The interface is contained within four functions:</p>
+
+<div class="pre-lang" id="premain574406"><div>C++</div><div class="pre-action-link"><span id="copycode574406" class="copy-code" data-index="574406" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre574406" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">void</span> ExternalEvent(BYTE newState, <span class="code-keyword">const</span> EventData* pData = NULL);
+<span class="code-keyword">void</span> InternalEvent(BYTE newState, <span class="code-keyword">const</span> EventData* pData = NULL);
+<span class="code-keyword">virtual</span> <span class="code-keyword">const</span> StateMapRow* GetStateMap() = <span class="code-digit">0</span>;
+<span class="code-keyword">virtual</span> <span class="code-keyword">const</span> StateMapRowEx* GetStateMapEx() = <span class="code-digit">0</span>;</pre>
+
+<p><code>ExternalEvent()</code> generates an external event to the state machine using as arguments the new state and a pointer to an <code>EventData</code> object, if any. The <code>InternalEvent() </code>function generates internal events using the same set of arguments.</p>
+
+<p>The <code>GetStateMap() </code>and <code>GetStateMapEx() </code>functions return an array of <code>StateMapRow </code>or <code>StateMapRowEx </code>instances which will be retrieved by the state engine when appropriate. The inheriting class must return an array with one of these functions. If the state machine only has state functions, <code>GetStateMap()</code> is used. If guard/entry/exit features are required, the <code>GetStateMapEx() i</code>s used. The other unused version must return <code>NULL</code>. However, multiline macros are provided to implement these functions for us, as I will demonstrate shortly.</p>
+
+<h2>Motor Example</h2>
+
+<p><code>Motor </code>and <code>MotorNM </code>classes are examples of how to use <code>StateMachine</code>. <code>MotorNM </code>(No Macros) exactly matches the <code>Motor</code> design without relying upon macros. This allows viewing all the macro-expanded code for ease of understanding. However, once up to speed, I find that the macros greatly simplify usage by hiding the required source machinery.</p>
+
+<p>The <code>MotorNM </code>class declaration shown below contains no macros:</p>
+
+<div class="pre-lang" id="premain109521"><div>C++</div><div class="pre-action-link"><span class="code-collapse" data-index="109521" id="preShrink109521">Shrink ▲</span> &nbsp; <span id="copycode109521" class="copy-code" data-index="109521" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre109521" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">class</span> MotorNMData : <span class="code-keyword">public</span> EventData
+{
+public:
+INT speed;
+};
+
+<span class="code-comment">// Motor class with no macros
+</span><span class="code-keyword">class</span> MotorNM : <span class="code-keyword">public</span> StateMachine
+{
+public:
+MotorNM();
+
+<span class="code-comment">// External events taken by this state machine
+</span>    <span class="code-keyword">void</span> SetSpeed(MotorNMData* data);
+<span class="code-keyword">void</span> Halt();
+
+private:
+INT m_currentSpeed; 
+
+<span class="code-comment">// State enumeration order must match the order of state method entries
+</span>    <span class="code-comment">// in the state map.
+</span>    <span class="code-keyword">enum</span> States
+{
+ST_IDLE,
+ST_STOP,
+ST_START,
+ST_CHANGE_SPEED,
+ST_MAX_STATES
+};
+
+<span class="code-comment">// Define the state machine state functions with event data type
+</span>    <span class="code-keyword">void</span> ST_Idle(<span class="code-keyword">const</span> NoEventData*);
+StateAction<span class="code-keyword">&lt;</span>MotorNM, NoEventData, &amp;MotorNM::ST_Idle<span class="code-keyword">&gt;</span> Idle;
+
+<span class="code-keyword">void</span> ST_Stop(<span class="code-keyword">const</span> NoEventData*);
+StateAction<span class="code-keyword">&lt;</span>MotorNM, NoEventData, &amp;MotorNM::ST_Stop<span class="code-keyword">&gt;</span> Stop;
+
+<span class="code-keyword">void</span> ST_Start(<span class="code-keyword">const</span> MotorNMData*);
+StateAction<span class="code-keyword">&lt;</span>MotorNM, MotorNMData, &amp;MotorNM::ST_Start<span class="code-keyword">&gt;</span> Start;
+
+<span class="code-keyword">void</span> ST_ChangeSpeed(<span class="code-keyword">const</span> MotorNMData*);
+StateAction<span class="code-keyword">&lt;</span>MotorNM, MotorNMData, &amp;MotorNM::ST_ChangeSpeed<span class="code-keyword">&gt;</span> ChangeSpeed;
+
+<span class="code-comment">// State map to define state object order. Each state map entry defines a
+</span>    <span class="code-comment">// state object.
+</span>private:
+<span class="code-keyword">virtual</span> <span class="code-keyword">const</span> StateMapRowEx* GetStateMapEx() { <span class="code-keyword">return</span> NULL; }
+<span class="code-keyword">virtual</span> <span class="code-keyword">const</span> StateMapRow* GetStateMap() {
+<span class="code-keyword">static</span> <span class="code-keyword">const</span> StateMapRow STATE_MAP[] = { 
+&amp;Idle,
+&amp;Stop,
+&amp;Start,
+&amp;ChangeSpeed,
+}; 
+C_ASSERT((<span class="code-keyword">sizeof</span>(STATE_MAP)/sizeof(StateMapRow)) == ST_MAX_STATES); 
+<span class="code-keyword">return</span> &amp;STATE_MAP[<span class="code-digit">0</span>]; }
+};</pre>
+
+<p>The <code>Motor </code>class uses macros for comparison:</p>
+
+<div class="pre-lang" id="premain931774"><div>C++</div><div class="pre-action-link"><span class="code-collapse" data-index="931774" id="preShrink931774">Shrink ▲</span> &nbsp; <span id="copycode931774" class="copy-code" data-index="931774" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre931774" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">class</span> MotorData : <span class="code-keyword">public</span> EventData
+{
+public:
+INT speed;
+};
+
+<span class="code-comment">// Motor class using macro support
+</span><span class="code-keyword">class</span> Motor : <span class="code-keyword">public</span> StateMachine
+{
+public:
+Motor();
+
+<span class="code-comment">// External events taken by this state machine
+</span>    <span class="code-keyword">void</span> SetSpeed(MotorData* data);
+<span class="code-keyword">void</span> Halt();
+
+private:
+INT m_currentSpeed; 
+
+<span class="code-comment">// State enumeration order must match the order of state method entries
+</span>    <span class="code-comment">// in the state map.
+</span>    <span class="code-keyword">enum</span> States
+{
+ST_IDLE,
+ST_STOP,
+ST_START,
+ST_CHANGE_SPEED,
+ST_MAX_STATES
+};
+
+<span class="code-comment">// Define the state machine state functions with event data type
+</span>    STATE_DECLARE(Motor,     Idle,            NoEventData)
+STATE_DECLARE(Motor,     Stop,            NoEventData)
+STATE_DECLARE(Motor,     Start,           MotorData)
+STATE_DECLARE(Motor,     ChangeSpeed,     MotorData)
+
+<span class="code-comment">// State map to define state object order. Each state map entry defines a
+</span>    <span class="code-comment">// state object.
+</span>    BEGIN_STATE_MAP
+STATE_MAP_ENTRY(&amp;Idle)
+STATE_MAP_ENTRY(&amp;Stop)
+STATE_MAP_ENTRY(&amp;Start)
+STATE_MAP_ENTRY(&amp;ChangeSpeed)
+END_STATE_MAP    
+};</pre>
+
+<p><code>Motor </code>implements our hypothetical motor-control state machine, where clients can start the motor, at a specific speed, and stop the motor. The<code> SetSpeed()</code> and <code>Halt() public</code> functions are considered external events into the <code>Motor </code>state machine. <code>SetSpeed()</code> takes event data, which contains the motor speed. This data structure will be deleted upon completion of the state processing, so it is imperative that the structure inherit from <code>EventData </code>and be created using <code>operator new </code>before the function call is made.</p>
+
+<p>When the <code>Motor </code>class is created, its initial state is <code>Idle</code>. The first call to <code>SetSpeed() </code>transitions the state machine to the <code>Start</code> state, where the motor is initially set into motion. Subsequent <code>SetSpeed()</code> events transition to the <code>ChangeSpeed</code> state, where the speed of an already moving motor is adjusted. The <code>Halt() </code>event transitions to <code>Stop</code>, where, during state execution, an internal event is generated to transition back to the Idle state.</p>
+
+<p>Creating a new state machine requires a few basic high-level steps:</p>
+
+<ol>
+<li>Inherit from the <code>StateMachine </code>base class</li>	<li>Create a <code>States </code>enumeration with one entry per state function</li>	<li>Create state functions using the <code>STATE </code>macros</li>	<li>Optionally create guard/entry/exit functions for each state using the <code>GUARD</code>, <code>ENTRY </code>and <code>EXIT </code>macros</li>	<li>Create one state map lookup table using the <code>STATE_MAP </code>macros</li>	<li>Create one transition map lookup table for each external event using the <code>TRANSITION_MAP</code> macros</li></ol>
+
+<h2>State Functions</h2>
+
+<p>State functions implement each state — one state function per state-machine state. In this implementation, all state functions must adhere this state-function signature, which is as follows:</p>
+
+<div class="pre-lang" id="premain724596"><div>C++</div><div class="pre-action-link"><span id="copycode724596" class="copy-code" data-index="724596" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre724596" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">void</span> <span class="code-keyword">&lt;</span><span class="code-keyword">class</span><span class="code-keyword">&gt;</span>::<span class="code-keyword">&lt;</span>func<span class="code-keyword">&gt;</span>(<span class="code-keyword">const</span> EventData*)</pre>
+
+<p><code>&lt;class&gt;</code> and <code>&lt;func&gt;</code> are not template parameters but just placeholders for the particular class and function name respectively. For example, you might choose a signature such as<code> void Motor::ST_Start(const MotorData*)</code>. The important thing here is that the function returns no data (has a <code>void </code>return type) and that it has one input argument of type <code>EventData*</code> (or a derived class thereof).</p>
+
+<p>Declare <code>state</code> functions with the <code>STATE_DECLARE </code>macro. The macro arguments are the state machine class name, state function name and event data type.</p>
+
+<div class="pre-lang" id="premain443247"><div>C++</div><div class="pre-action-link"><span id="copycode443247" class="copy-code" data-index="443247" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre443247" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true">STATE_DECLARE(Motor,     Idle,            NoEventData)
+STATE_DECLARE(Motor,     Stop,            NoEventData)
+STATE_DECLARE(Motor,     Start,           MotorData)
+STATE_DECLARE(Motor,     ChangeSpeed,     MotorData)</pre>
+
+<p>Expanding the macros above yields:</p>
+
+<div class="pre-lang" id="premain228013"><div>C++</div><div class="pre-action-link"><span id="copycode228013" class="copy-code" data-index="228013" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre228013" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">void</span> ST_Idle(<span class="code-keyword">const</span> NoEventData*);
+StateAction<span class="code-keyword">&lt;</span>Motor, NoEventData, &amp;Motor::ST_Idle<span class="code-keyword">&gt;</span> Idle;
+
+<span class="code-keyword">void</span> ST_Stop(<span class="code-keyword">const</span> NoEventData*);
+StateAction<span class="code-keyword">&lt;</span>Motor, NoEventData, &amp;Motor::ST_Stop<span class="code-keyword">&gt;</span> Stop;
+
+<span class="code-keyword">void</span> ST_Start(<span class="code-keyword">const</span> MotorData*);
+StateAction<span class="code-keyword">&lt;</span>MotorNM, MotorData, &amp;Motor::ST_Start<span class="code-keyword">&gt;</span> Start;
+
+<span class="code-keyword">void</span> ST_ChangeSpeed(<span class="code-keyword">const</span> MotorData*);
+StateAction<span class="code-keyword">&lt;</span>Motor, MotorData, &amp;Motor::ST_ChangeSpeed<span class="code-keyword">&gt;</span> ChangeSpeed;</pre>
+
+<p>Notice the multiline macros prepend "ST_" to each state function name. Three characters are added to each state/guard/entry/exit function automatically within the macro. For instance, if declaring a function using <code>STATE_DEFINE(Motor, Idle, NoEventData)</code> the actual state function is called <code>ST_Idle()</code>.</p>
+
+<ol>
+<li><code>ST_</code> - state function prepend characters</li>	<li><code>GD_</code> - guard function prepend characters</li>	<li><code>EN_</code> - entry function prepend characters</li>	<li><code>EX_</code> - exit function prepend characters</li></ol>
+
+<p>After a <code>state</code> function is declared, define a <code>state</code> function implementation with the <code>STATE_DEFINE </code>macro. The arguments are the state machine class name, state function name, and event data type. The code to implement your state behavior goes inside the <code>state</code> function. Note, any <code>state</code> function code may call<code> InternalEvent()</code> to switch to another state. Guard/entry/exit functions cannot call <code>InternalEvent() </code>otherwise a runtime error will result.</p>
+
+<div class="pre-lang" id="premain540490"><div>C++</div><div class="pre-action-link"><span id="copycode540490" class="copy-code" data-index="540490" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre540490" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true">STATE_DEFINE(Motor, Stop, NoEventData)
+{
+cout <span class="code-keyword">&lt;</span><span class="code-keyword">&lt;</span> <span class="code-string">"</span><span class="code-string">Motor::ST_Stop"</span> <span class="code-keyword">&lt;</span><span class="code-keyword">&lt;</span> endl;
+m_currentSpeed = <span class="code-digit">0</span>; 
+
+<span class="code-comment">// perform the stop motor processing here
+</span>    <span class="code-comment">// transition to Idle via an internal event
+</span>    InternalEvent(ST_IDLE);
+}</pre>
+
+<p>Expanding the macro yields this state function definition.</p>
+
+<div class="pre-lang" id="premain361403"><div>C++</div><div class="pre-action-link"><span id="copycode361403" class="copy-code" data-index="361403" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre361403" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">void</span> Motor::ST_Stop(<span class="code-keyword">const</span> NoEventData* data)
+{
+cout <span class="code-keyword">&lt;</span><span class="code-keyword">&lt;</span> <span class="code-string">"</span><span class="code-string">Motor::ST_Stop"</span> <span class="code-keyword">&lt;</span><span class="code-keyword">&lt;</span> endl;
+m_currentSpeed = <span class="code-digit">0</span>; 
+
+<span class="code-comment">// perform the stop motor processing here
+</span>    <span class="code-comment">// transition to Idle via an internal event
+</span>    InternalEvent(ST_IDLE);
+}</pre>
+
+<p>Each state function must have an enumeration associated with it. These enumerations are used to store the current state of the state machine. In <code>Motor</code>, <code>States </code>provides these enumerations, which are used later for indexing into the transition map and state map lookup tables.</p>
+
+<div class="pre-lang" id="premain807903"><div>C++</div><div class="pre-action-link"><span id="copycode807903" class="copy-code" data-index="807903" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre807903" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">enum</span> States
+{
+ST_IDLE,
+ST_STOP,
+ST_START,
+ST_CHANGE_SPEED,
+ST_MAX_STATES
+};</pre>
+
+<p>It is important that the enumeration order match the order provided within the state map. This way, a state enumeration is tied to a particular state function call. <code>EVENT_IGNORED</code> and <code>CANNOT_HAPPEN </code>are two other constants used in conjunction with these state enumerations. <code>EVENT_IGNORED </code>tells the state engine not to execute any state, just return and do nothing. <code>CANNOT_HAPPEN </code>tells the state engine to fault. This abnormal catastrophic failure condition is never supposed to occur.</p>
+
+<h2>State Map</h2>
+
+<p>The state-machine engine knows which state function to call by using the state map. The state map maps the <code>m_currentState</code> variable to a specific state function. For instance, if <code>m_currentState</code> is 2, then the third state-map function pointer entry will be called (counting from zero). The state map table is created using these three macros:</p>
+
+<div class="pre-lang" id="premain979398"><div>C++</div><div class="pre-action-link"><span id="copycode979398" class="copy-code" data-index="979398" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre979398" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true">BEGIN_STATE_MAP
+STATE_MAP_ENTRY
+END_STATE_MAP</pre>
+
+<p><code>BEGIN_STATE_MAP </code>starts the state map sequence. Each <code>STATE_MAP_ENTRY </code>has a state function name argument. <code>END_STATE_MAP </code>terminates the map. The state map for <code>Motor </code>is shown below.</p>
+
+<div class="pre-lang" id="premain986210"><div>C++</div><div class="pre-action-link"><span id="copycode986210" class="copy-code" data-index="986210" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre986210" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true">BEGIN_STATE_MAP
+STATE_MAP_ENTRY(&amp;Idle)
+STATE_MAP_ENTRY(&amp;Stop)
+STATE_MAP_ENTRY(&amp;Start)
+STATE_MAP_ENTRY(&amp;ChangeSpeed)
+END_STATE_MAP    </pre>
+
+<p>The completed state map just implements the pure <code>virtual</code> function <code>GetStateMap()</code> defined within the <code>StateMachine </code>base class. Now the <code>StateMachine </code>base class can get all the <code>StateMapRow</code> objects via this call. The macro-expanded code is shown below:</p>
+
+<div class="pre-lang" id="premain187696"><div>C++</div><div class="pre-action-link"><span id="copycode187696" class="copy-code" data-index="187696" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre187696" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true">private:
+<span class="code-keyword">virtual</span> <span class="code-keyword">const</span> StateMapRowEx* GetStateMapEx() { <span class="code-keyword">return</span> NULL; }
+<span class="code-keyword">virtual</span> <span class="code-keyword">const</span> StateMapRow* GetStateMap() {
+<span class="code-keyword">static</span> <span class="code-keyword">const</span> StateMapRow STATE_MAP[] = { 
+&amp;Idle,
+&amp;Stop,
+&amp;Start,
+&amp;ChangeSpeed,
+}; 
+C_ASSERT((<span class="code-keyword">sizeof</span>(STATE_MAP)/sizeof(StateMapRow)) == ST_MAX_STATES); 
+<span class="code-keyword">return</span> &amp;STATE_MAP[<span class="code-digit">0</span>]; }</pre>
+
+<p>Notice the <code>C_ASSERT </code>macro. It provides compile time protection against a state map having the wrong number of entries. Visual Studio gives an error of "<code>error C2118: negative subscript</code>". Your compiler may give a different error message.</p>
+
+<p>Alternatively, guard/entry/exit features require utilizing the <code>_EX</code> (extended) version of the macros.</p>
+
+<div class="pre-lang" id="premain388307"><div>C++</div><div class="pre-action-link"><span id="copycode388307" class="copy-code" data-index="388307" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre388307" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true">BEGIN_STATE_MAP_EX
+STATE_MAP_ENTRY_EX <span class="code-keyword">or</span> STATE_MAP_ENTRY_ALL_EX 
+END_STATE_MAP_EX</pre>
+
+<p>The <code>STATE_MAP_ENTRY_ALL_EX </code>macro has four arguments for the state action, guard condition, entry action and exit action in that order. The state action is mandatory but the other actions are optional. If a state doesn't have an action, then use <code>0</code> for the argument. If a state doesn't have any guard/entry/exit options, the <code>STATE_MAP_ENTRY_EX </code>macro defaults all unused options to <code>0</code>. The macro snippet below is for an advanced example presented later in the article.</p>
+
+<div class="pre-lang" id="premain227664"><div>C++</div><div class="pre-action-link"><span id="copycode227664" class="copy-code" data-index="227664" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre227664" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true">BEGIN_STATE_MAP_EX
+STATE_MAP_ENTRY_ALL_EX(&amp;Idle, <span class="code-digit">0</span>, &amp;EntryIdle, <span class="code-digit">0</span>)
+STATE_MAP_ENTRY_EX(&amp;Completed)
+STATE_MAP_ENTRY_EX(&amp;Failed)
+STATE_MAP_ENTRY_ALL_EX(&amp;StartTest, &amp;GuardStartTest, <span class="code-digit">0</span>, <span class="code-digit">0</span>)
+STATE_MAP_ENTRY_EX(&amp;Acceleration)
+STATE_MAP_ENTRY_ALL_EX(&amp;WaitForAcceleration, <span class="code-digit">0</span>, <span class="code-digit">0</span>, &amp;ExitWaitForAcceleration)
+STATE_MAP_ENTRY_EX(&amp;Deceleration)
+STATE_MAP_ENTRY_ALL_EX(&amp;WaitForDeceleration, <span class="code-digit">0</span>, <span class="code-digit">0</span>, &amp;ExitWaitForDeceleration)
+END_STATE_MAP_EX</pre>
+
+<p>Each entry within the transition map is a <code>StateMapRow</code>:</p>
+
+<div class="pre-lang" id="premain98541"><div>C++</div><div class="pre-action-link"><span id="copycode98541" class="copy-code" data-index="98541" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre98541" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">struct</span> StateMapRow
+{
+<span class="code-keyword">const</span> StateBase* <span class="code-keyword">const</span> State;
+};</pre>
+
+<p>The <code>StateBase </code>pointer has a pure <code>virtual</code> interface called by <code>StateEngine()</code>.</p>
+
+<div class="pre-lang" id="premain954991"><div>C++</div><div class="pre-action-link"><span id="copycode954991" class="copy-code" data-index="954991" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre954991" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">class</span> StateBase
+{
+public:
+<span class="code-keyword">virtual</span> <span class="code-keyword">void</span> InvokeStateAction(StateMachine* sm, <span class="code-keyword">const</span> EventData* data) <span class="code-keyword">const</span> = <span class="code-digit">0</span>;
+};</pre>
+
+<p>The <code>StateAction </code>derives from <code>StateBase </code>and its sole responsibility is to implement <code>InvokeStateAction()</code> and cast the <code>StateMachine </code>and <code>EventData </code>pointers to the correct derived class types, then call the state member function. Therefore, the state engine overhead to call each state function is one virtual function call, one <code>static_cast&lt;&gt; </code>and one <code>dynamic_cast&lt;&gt;</code>.</p>
+
+<div class="pre-lang" id="premain941966"><div>C++</div><div class="pre-action-link"><span id="copycode941966" class="copy-code" data-index="941966" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre941966" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">template</span> <span class="code-keyword">&lt;</span><span class="code-keyword">class</span> SM, <span class="code-keyword">class</span> Data, <span class="code-keyword">void</span> (SM::*Func)(<span class="code-keyword">const</span> Data*)<span class="code-keyword">&gt;</span>
+<span class="code-keyword">class</span> StateAction : <span class="code-keyword">public</span> StateBase
+{
+public:
+<span class="code-keyword">virtual</span> <span class="code-keyword">void</span> InvokeStateAction(StateMachine* sm, <span class="code-keyword">const</span> EventData* data) <span class="code-keyword">const</span> 
+{
+<span class="code-comment">// Downcast the state machine and event data to the correct derived type
+</span>        SM* derivedSM = <span class="code-keyword">static_cast</span><span class="code-keyword">&lt;</span>SM*<span class="code-keyword">&gt;</span>(sm);
+
+<span class="code-comment">// Dynamic cast the data to the correct derived type        
+</span>        <span class="code-keyword">const</span> Data* derivedData = <span class="code-keyword">dynamic_cast</span><span class="code-keyword">&lt;</span><span class="code-keyword">const</span> Data*<span class="code-keyword">&gt;</span>(data);
+ASSERT_TRUE(derivedData != NULL);
+
+<span class="code-comment">// Call the state function
+</span>        (derivedSM-<span class="code-keyword">&gt;</span>*Func)(derivedData);
+}
+};</pre>
+
+<p>The template arguments to <code>StateAction&lt;&gt;</code> are a state machine class (<code>SM</code>), an event data type (<code>Data</code>) and a member function pointer to the state function (<code>Func</code>).</p>
+
+<p><code>GuardCondition&lt;&gt;</code>, <code>EntryAction&lt;&gt;</code> and<code> ExitAction&lt;&gt;</code> classes also exist and their role is the same – typecast state machine and event data then call the action member function. Minor variations exist with the template arguments. The <code>GuardCondition&lt;&gt; </code>class <code>Func </code>template parameter changes slightly and returns a <code>BOOL</code>. <code>ExitAction&lt;&gt;</code> doesn't have a <code>Data </code>template argument.</p>
+
+<h2>Transition map</h2>
+
+<p>The last detail to attend to are the state transition rules. How does the state machine know what transitions should occur? The answer is the transition map. A transition map is lookup table that maps the <code>m_currentState </code>variable to a state enum constant. Every external event has a transition map table created with three macros:</p>
+
+<div class="pre-lang" id="premain61275"><div>C++</div><div class="pre-action-link"><span id="copycode61275" class="copy-code" data-index="61275" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre61275" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true">BEGIN_TRANSITION_MAP
+TRANSITION_MAP_ENTRY
+END_TRANSITION_MAP</pre>
+
+<p>The <code>Halt()</code> event function in <code>Motor </code>defines the transition map as:</p>
+
+<div class="pre-lang" id="premain209659"><div>C++</div><div class="pre-action-link"><span id="copycode209659" class="copy-code" data-index="209659" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre209659" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">void</span> Motor::Halt()
+{
+BEGIN_TRANSITION_MAP                                      <span class="code-comment">// - Current State -
+</span>        TRANSITION_MAP_ENTRY (EVENT_IGNORED)                  <span class="code-comment">// ST_IDLE
+</span>        TRANSITION_MAP_ENTRY (CANNOT_HAPPEN)                  <span class="code-comment">// ST_STOP
+</span>        TRANSITION_MAP_ENTRY (ST_STOP)                        <span class="code-comment">// ST_START
+</span>        TRANSITION_MAP_ENTRY (ST_STOP)                        <span class="code-comment">// ST_CHANGE_SPEED
+</span>    END_TRANSITION_MAP(NULL)
+}</pre>
+
+<p>The macro-expanded code for <code>Halt() </code>is below. Again, notice the <code>C_ASSERT</code> macro providing compile time protection against an incorrect number of transition map entries.</p>
+
+<div class="pre-lang" id="premain487427"><div>C++</div><div class="pre-action-link"><span id="copycode487427" class="copy-code" data-index="487427" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre487427" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">void</span> Motor::Halt()
+{
+<span class="code-keyword">static</span> <span class="code-keyword">const</span> BYTE TRANSITIONS[] = {
+EVENT_IGNORED,                    <span class="code-comment">// ST_IDLE
+</span>        CANNOT_HAPPEN,                    <span class="code-comment">// ST_STOP
+</span>        ST_STOP,                          <span class="code-comment">// ST_START
+</span>        ST_STOP,                          <span class="code-comment">// ST_CHANGE_SPEED
+</span>    };
+ExternalEvent(TRANSITIONS[GetCurrentState()], NULL); 
+C_ASSERT((<span class="code-keyword">sizeof</span>(TRANSITIONS)/sizeof(BYTE)) == ST_MAX_STATES);     
+}</pre>
+
+<p><code>BEGIN_TRANSITION_MAP</code> starts the map. Each <code>TRANSITION_MAP_ENTRY </code>that follows indicates what the state machine should do based upon the current state. The number of entries in each transition map table must match the number of state functions exactly. In our example, we have four state functions, so we need four entries. The location of each entry matches the order of state functions defined within the state map. Thus, the first entry within the <code>Halt()</code> function indicates an <code>EVENT_IGNORED</code> as shown below.</p>
+
+<div class="pre-lang" id="premain230980"><div>C++</div><div class="pre-action-link"><span id="copycode230980" class="copy-code" data-index="230980" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre230980" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true">TRANSITION_MAP_ENTRY (EVENT_IGNORED)    <span class="code-comment">// ST_IDLE</span></pre>
+
+<p>This is interpreted as "If a Halt event occurs while the current state is state Idle, just ignore the event."</p>
+
+<p>Similarly, the third entry in the map is:</p>
+
+<div class="pre-lang" id="premain956702"><div>C++</div><div class="pre-action-link"><span id="copycode956702" class="copy-code" data-index="956702" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre956702" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true">TRANSITION_MAP_ENTRY (ST_STOP)         <span class="code-comment">// ST_START</span></pre>
+
+<p>This indicates "If a Halt event occurs while current is state Start, then transition to state Stop."</p>
+
+<p><code>END_TRANSITION_MAP </code>terminates the map. The argument to this end macro is the event data, if any. <code>Halt()</code> has no event data so the argument is <code>NULL</code>, but<code> ChangeSpeed()</code> has data so it is passed in here.</p>
+
+<h2>State Engine</h2>
+
+<p>The state engine executes the state functions based upon events generated. The transition map is an array of <code>StateMapRow</code> instances indexed by the <code>m_currentState </code>variable. When the <code>StateEngine()</code> function executes, it looks up a <code>StateMapRow </code>or <code>StateMapRowEx </code>array by calling <code>GetStateMap()</code> or <code>GetStateMapEx()</code>:</p>
+
+<div class="pre-lang" id="premain203577"><div>C++</div><div class="pre-action-link"><span id="copycode203577" class="copy-code" data-index="203577" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre203577" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">void</span> StateMachine::StateEngine(<span class="code-keyword">void</span>)
+{
+<span class="code-keyword">const</span> StateMapRow* pStateMap = GetStateMap();
+<span class="code-keyword">if</span> (pStateMap != NULL)
+StateEngine(pStateMap);
+<span class="code-keyword">else</span>
+{
+<span class="code-keyword">const</span> StateMapRowEx* pStateMapEx = GetStateMapEx();
+<span class="code-keyword">if</span> (pStateMapEx != NULL)
+StateEngine(pStateMapEx);
+<span class="code-keyword">else</span>
+ASSERT();
+}
+}</pre>
+
+<p>Indexing into the <code>StateMapRow </code>table with a new state value a state functions is executed by calling <code>InvokeStateAction()</code>:</p>
+
+<div class="pre-lang" id="premain144404"><div>C++</div><div class="pre-action-link"><span id="copycode144404" class="copy-code" data-index="144404" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre144404" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">const</span> StateBase* state = pStateMap[m_newState].State;
+state-<span class="code-keyword">&gt;</span>InvokeStateAction(<span class="code-keyword">this</span>, pDataTemp);</pre>
+
+<p>After the state function has a chance to execute, it deletes the event data, if any, before checking to see if any internal events were generated. One entire state engine function is shown below. The other overloaded state engine function (see attached source code) handles state machines with a <code>StateMapRowEx </code>table containing the additional guard/entry/exit features.</p>
+
+<div class="pre-lang" id="premain476665"><div>C++</div><div class="pre-action-link"><span class="code-collapse" data-index="476665" id="preShrink476665">Shrink ▲</span> &nbsp; <span id="copycode476665" class="copy-code" data-index="476665" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre476665" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">void</span> StateMachine::StateEngine(<span class="code-keyword">const</span> StateMapRow* <span class="code-keyword">const</span> pStateMap)
+{
+<span class="code-keyword">const</span> EventData* pDataTemp = NULL;    
+
+<span class="code-comment">// While events are being generated keep executing states
+</span>    <span class="code-keyword">while</span> (m_eventGenerated)
+{
+<span class="code-comment">// Error check that the new state is valid before proceeding
+</span>        ASSERT_TRUE(m_newState <span class="code-keyword">&lt;</span> MAX_STATES);
+
+<span class="code-comment">// Get the pointer from the state map
+</span>        <span class="code-keyword">const</span> StateBase* state = pStateMap[m_newState].State;
+
+<span class="code-comment">// Copy of event data pointer
+</span>        pDataTemp = m_pEventData;
+
+<span class="code-comment">// Event data used up, reset the pointer
+</span>        m_pEventData = NULL;
+
+<span class="code-comment">// Event used up, reset the flag
+</span>        m_eventGenerated = FALSE;
+
+<span class="code-comment">// Switch to the new current state
+</span>        SetCurrentState(m_newState);
+
+<span class="code-comment">// Execute the state action passing in event data
+</span>        ASSERT_TRUE(state != NULL);
+state-<span class="code-keyword">&gt;</span>InvokeStateAction(<span class="code-keyword">this</span>, pDataTemp);
+
+<span class="code-comment">// If event data was used, then delete it
+</span>        <span class="code-keyword">if</span> (pDataTemp)
+{
+<span class="code-keyword">delete</span> pDataTemp;
+pDataTemp = NULL;
+}
+}
+}</pre>
+
+<p>The state engine logic for guard, entry, state, and exit actions is expressed by the following sequence. The <code>StateMapRow</code> engine implements only #1 and #5 below. The extended <code>StateMapRowEx</code> engine uses the entire logic sequence.</p>
+
+<ol>
+<li>Evaluate the state transition table. If <code>EVENT_IGNORED</code>, the event is ignored and the transition is not performed. If <code>CANNOT_HAPPEN</code>, the software faults. Otherwise, continue with next step.</li>	<li>If a guard condition is defined execute the guard condition function. If the guard condition returns <code>FALSE</code>, the state transition is ignored and the state function is not called. If the guard returns <code>TRUE</code>, or if no guard condition exists, the state function will be executed.</li>	<li>If transitioning to a new state and an exit action is defined for the current state, call the current state exit action function.</li>	<li>If transitioning to a new state and an entry action is defined for the new state, call the new state entry action function.</li>	<li>Call the state action function for the new state. The new state is now the current state.</li></ol>
+
+<h2>Generating Events</h2>
+
+<p>At this point, we have a working state machine. Let's see how to generate events to it. An external event is generated by creating the event data structure on the heap using new, assigning the structure member variables, and calling the external event function. The following code fragment shows how a synchronous call is made.</p>
+
+<div class="pre-lang" id="premain194179"><div>C++</div><div class="pre-action-link"><span id="copycode194179" class="copy-code" data-index="194179" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre194179" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true">MotorData* data = <span class="code-keyword">new</span> MotorData();
+data-<span class="code-keyword">&gt;</span>speed = <span class="code-digit">50</span>;
+motor.SetSpeed(data);</pre>
+
+<p>To generate an internal event from within a state function, call <code>InternalEvent()</code>. If the destination doesn't accept event data, then the function is called with only the state you want to transition to:</p>
+
+<div class="pre-lang" id="premain75848"><div>C++</div><div class="pre-action-link"><span id="copycode75848" class="copy-code" data-index="75848" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre75848" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true">InternalEvent(ST_IDLE);</pre>
+
+<p>In the example above, once the state function completes execution the state machine will transition to the Idle state. If, on the other hand, event data needs to be sent to the destination state, then the data structure needs to be created on the heap and passed in as an argument:</p>
+
+<div class="pre-lang" id="premain477105"><div>C++</div><div class="pre-action-link"><span id="copycode477105" class="copy-code" data-index="477105" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre477105" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true">MotorData* data = <span class="code-keyword">new</span> MotorData();
+data-<span class="code-keyword">&gt;</span>speed = <span class="code-digit">100</span>;
+InternalEvent(ST_CHANGE_SPEED, data);</pre>
+
+<h3>External Event No Heap Data</h3>
+
+<p>The state machine has the <code>EXTERNAL_EVENT_NO_HEAP_DATA</code> build option that changes the behavior of <code>ExternalEvent()</code>. When defined, just pass in data on the stack instead of creating external event data on the heap as shown below. This option relieves the caller from having to remember to create event data structure dynamically.</p>
+
+<div class="pre-lang" id="premain731912"><div>C++</div><div class="pre-action-link"><span id="copycode731912" class="copy-code" data-index="731912" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre731912" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true">MotorData data;
+data.speed = <span class="code-digit">100</span>;
+motor.SetSpeed(&amp;data);</pre>
+
+<p>The option doesn't effect internal events. <code>InternalEvent()</code> data, if any, must still be created on the heap.</p>
+
+<div class="pre-lang" id="premain562557"><div>C++</div><div class="pre-action-link"><span id="copycode562557" class="copy-code" data-index="562557" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre562557" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true">MotorData* data = <span class="code-keyword">new</span> MotorData();
+data-<span class="code-keyword">&gt;</span>speed = <span class="code-digit">100</span>;
+InternalEvent(ST_CHANGE_SPEED, data);</pre>
+
+<h2>Hiding and Eliminating Heap Usage</h2>
+
+<p>The <code>SetSpeed()</code> function takes a <code>MotorData </code>argument that the client must create on the heap. Alternatively, the class can hide the heap usage from the caller. The change is as simple as creating the <code>MotorData </code>instance within the <code>SetSpeed()</code> function. This way, the caller isn’t required to create a dynamic instance:</p>
+
+<div class="pre-lang" id="premain487481"><div>C++</div><div class="pre-action-link"><span id="copycode487481" class="copy-code" data-index="487481" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre487481" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">void</span> Motor::SetSpeed(INT speed)
+{
+MotorData* data = <span class="code-keyword">new</span> MotorData;
+pData-<span class="code-keyword">&gt;</span>speed = speed;
+
+BEGIN_TRANSITION_MAP                             <span class="code-comment">// - Current State -
+</span>        TRANSITION_MAP_ENTRY (ST_START)              <span class="code-comment">// ST_IDLE
+</span>        TRANSITION_MAP_ENTRY (CANNOT_HAPPEN)         <span class="code-comment">// ST_STOP
+</span>        TRANSITION_MAP_ENTRY (ST_CHANGE_SPEED)       <span class="code-comment">// ST_START
+</span>        TRANSITION_MAP_ENTRY (ST_CHANGE_SPEED)       <span class="code-comment">// ST_CHANGE_SPEED
+</span>    END_TRANSITION_MAP(data)
+}</pre>
+
+<p>Alternatively, use the <code>EXTERNAL_EVENT_NO_HEAP_DATA</code> build option and the caller is not required to create external event data on the heap.</p>
+
+<p>On some systems, using the heap is undesirable. For those systems, I've included the <code>xallocator </code>fixed block allocator within the attached source code. It's optional, but when used it creates memory blocks from static memory or previously recycled heap memory. A single <code>XALLOCATOR </code>macro in the <code>EventData</code> base class provides fixed block allocations for all <code>EventData </code>and derived classes.</p>
+
+<div class="pre-lang" id="premain141654"><div>C++</div><div class="pre-action-link"><span id="copycode141654" class="copy-code" data-index="141654" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre141654" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">#include</span><span class="code-preprocessor"> <span class="code-string">"</span><span class="code-string">xallocator.h"</span>
+</span><span class="code-keyword">class</span> EventData
+{
+public:
+<span class="code-keyword">virtual</span> ~EventData() {}
+XALLOCATOR
+};</pre>
+
+<p>For more information on xallocator, see the article "<strong><a href="http://www.codeproject.com/Articles/1084801/Replace-malloc-free-with-a-Fast-Fixed-Block-Memory">Replace malloc/free with a Fast Fixed Block Memory Allocator</a></strong>".</p>
+
+<h2>State Machine Inheritance</h2>
+
+<p>Inheriting states allows common states to reside in a base class for sharing with inherited classes. <code>StateMachine </code>supports state machine inheritance with minimal effort. I’ll use an example to illustrate.</p>
+
+<p>Some systems have a built in self-test mode where the software executes a series of test steps to determine if the system is operational. In this example, each self-test has common states to handle <code>Idle</code>, <code>Completed</code> and <code>Failed</code> states. Using inheritance, a base class contains the shared states. The classes <code>SelfTest</code> and <code>CentrifugeTest </code>demonstrate the concept. The state diagram is shown below.</p>
+
+<p><img alt="Image 2" src="CentrifugeTest.png" style="height: 736px; width: 500px" data-src="CentrifugeTest.png" class="lazyautosizes lazyloaded" data-sizes="auto" ></p>
+
+<div class="Caption">Figure 2: CentrifugeTest state diagram</div>
+
+<p><code>SelfTest </code>defines the following states:</p>
+
+<ol start="0">
+<li><code>Idle</code></li>	<li><code>Completed</code></li>	<li><code>Failed</code></li></ol>
+
+<p><code>CentrifugeTest </code>inherits those states and creates new ones:</p>
+
+<ol start="3">
+<li>Start Test</li>	<li>Acceleration</li>	<li>Wait For Acceleration</li>	<li>Deceleration</li>	<li>Wait For Deceleration</li></ol>
+
+<p>The <code>SeftTest </code>base class defines the <code>States </code>enumeration and states but not the state map. Only the most derived state machine class within the hierarchy defines a state map.</p>
+
+<div class="pre-lang" id="premain660518"><div>C++</div><div class="pre-action-link"><span id="copycode660518" class="copy-code" data-index="660518" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre660518" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">enum</span> States
+{
+ST_IDLE,
+ST_COMPLETED,
+ST_FAILED,
+ST_MAX_STATES
+};
+
+<span class="code-comment">// Define the state machine states
+</span>STATE_DECLARE(SelfTest,     Idle,            NoEventData)
+ENTRY_DECLARE(SelfTest,     EntryIdle,       NoEventData)
+STATE_DECLARE(SelfTest,     Completed,       NoEventData)
+STATE_DECLARE(SelfTest,     Failed,          NoEventData)</pre>
+
+<p>The <code>CentrifugeTest </code>class defines its state machine below. Take note of the "<code>ST_START_TEST = SelfTest::ST_MAX_STATES</code>" enumeration entry. It is critical that the derived class continue numbering states where the base class left off.</p>
+
+<div class="pre-lang" id="premain414937"><div>C++</div><div class="pre-action-link"><span class="code-collapse" data-index="414937" id="preShrink414937">Shrink ▲</span> &nbsp; <span id="copycode414937" class="copy-code" data-index="414937" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre414937" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">enum</span> States
+{
+<span class="code-comment">// Continue state numbering using the last SelfTest::States enum value
+</span>    ST_START_TEST = SelfTest::ST_MAX_STATES,    
+ST_ACCELERATION,
+ST_WAIT_FOR_ACCELERATION,
+ST_DECELERATION,
+ST_WAIT_FOR_DECELERATION,
+ST_MAX_STATES
+};
+
+<span class="code-comment">// Define the state machine state functions with event data type
+</span>STATE_DECLARE(CentrifugeTest,     Idle,                        NoEventData)
+STATE_DECLARE(CentrifugeTest,     StartTest,                   NoEventData)
+GUARD_DECLARE(CentrifugeTest,     GuardStartTest,              NoEventData)
+STATE_DECLARE(CentrifugeTest,     Acceleration,                NoEventData)
+STATE_DECLARE(CentrifugeTest,     WaitForAcceleration,         NoEventData)
+EXIT_DECLARE(CentrifugeTest,      ExitWaitForAcceleration)
+STATE_DECLARE(CentrifugeTest,     Deceleration,                NoEventData)
+STATE_DECLARE(CentrifugeTest,     WaitForDeceleration,         NoEventData)
+EXIT_DECLARE(CentrifugeTest,      ExitWaitForDeceleration)
+
+<span class="code-comment">// State map to define state object order. Each state map entry defines a
+</span><span class="code-comment">// state object.
+</span>BEGIN_STATE_MAP_EX
+STATE_MAP_ENTRY_ALL_EX(&amp;Idle, <span class="code-digit">0</span>, &amp;EntryIdle, <span class="code-digit">0</span>)
+STATE_MAP_ENTRY_EX(&amp;Completed)
+STATE_MAP_ENTRY_EX(&amp;Failed)
+STATE_MAP_ENTRY_ALL_EX(&amp;StartTest, &amp;GuardStartTest, <span class="code-digit">0</span>, <span class="code-digit">0</span>)
+STATE_MAP_ENTRY_EX(&amp;Acceleration)
+STATE_MAP_ENTRY_ALL_EX(&amp;WaitForAcceleration, <span class="code-digit">0</span>, <span class="code-digit">0</span>, &amp;ExitWaitForAcceleration)
+STATE_MAP_ENTRY_EX(&amp;Deceleration)
+STATE_MAP_ENTRY_ALL_EX(&amp;WaitForDeceleration, <span class="code-digit">0</span>, <span class="code-digit">0</span>, &amp;ExitWaitForDeceleration)
+END_STATE_MAP_EX    </pre>
+
+<p>The state map contains entries for all states within the hierarchy, in this case <code>SelfTest </code>and <code>CentrifugeTest</code>. Notice the use of the <code>_EX</code> extended state map macros so that guard/entry/exit features are supported. For instance, a guard condition for the <code>StartState</code> is declared as:</p>
+
+<div class="pre-lang" id="premain564941"><div>C++</div><div class="pre-action-link"><span id="copycode564941" class="copy-code" data-index="564941" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre564941" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true">GUARD_DECLARE(CentrifugeTest, GuardStartTest, NoEventData)</pre>
+
+<p>The guard condition function returns <code>TRUE </code>if the state function is to be executed or <code>FALSE</code> otherwise.</p>
+
+<div class="pre-lang" id="premain443629"><div>C++</div><div class="pre-action-link"><span id="copycode443629" class="copy-code" data-index="443629" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre443629" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true">GUARD_DEFINE(CentrifugeTest, GuardStartTest, NoEventData)
+{
+cout <span class="code-keyword">&lt;</span><span class="code-keyword">&lt;</span> <span class="code-string">"</span><span class="code-string">CentrifugeTest::GuardStartTest"</span> <span class="code-keyword">&lt;</span><span class="code-keyword">&lt;</span> endl;
+<span class="code-keyword">if</span> (m_speed == <span class="code-digit">0</span>)
+<span class="code-keyword">return</span> TRUE;    <span class="code-comment">// Centrifuge stopped. OK to start test.
+</span>    <span class="code-keyword">else</span>
+<span class="code-keyword">return</span> FALSE;   <span class="code-comment">// Centrifuge spinning. Can't start test.
+</span>}</pre>
+
+<h3>Base Class External Event Functions</h3>
+
+<p>When using state machine inheritance, it’s not just the most-derived class that may define external event functions. The base and intermediary classes may also use transition maps. A parent state machine doesn’t have awareness of child classes. One or more subclass state machine hierarchical levels may exist each adding more states. Therefore parent classes of the most-derived state machine utilize a <em>partial</em> transition map, that is, the state transition map only handles the states that are known to the parent class. Any events generated while the current state is outside the maximum parent state enumeration range must be handled by the <code>PARENT_TRANSITION </code>macro which is placed directly above the transition map as shown below.</p>
+
+<div class="pre-lang" id="premain675501"><div>C++</div><div class="pre-action-link"><span id="copycode675501" class="copy-code" data-index="675501" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre675501" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">void</span> SelfTest::Cancel()
+{
+PARENT_TRANSITION (ST_FAILED)
+
+BEGIN_TRANSITION_MAP                                    <span class="code-comment">// - Current State -
+</span>        TRANSITION_MAP_ENTRY (EVENT_IGNORED)                <span class="code-comment">// ST_IDLE
+</span>        TRANSITION_MAP_ENTRY (CANNOT_HAPPEN)                <span class="code-comment">// ST_COMPLETED
+</span>        TRANSITION_MAP_ENTRY (CANNOT_HAPPEN)                <span class="code-comment">// ST_FAILED
+</span>    END_TRANSITION_MAP(NULL)
+}</pre>
+
+<p>The <code>PARENT_TRANSITION </code>example above is read “If the <code>Cancel</code> event is generated when the state machine is <em>not</em> in <code>ST_IDLE</code>, <code>ST_COMPLETE</code>, or <code>ST_FAILED </code>then transition to the <code>ST_FAILED </code>state”. The macro preceding the transition map is the catch-all if the current state is beyond what is known by the current state machine hierarchy level. The expanded <code>PARENT_TRANSITION </code>macro for the above example is shown below.</p>
+
+<div class="pre-lang" id="premain326045"><div>C++</div><div class="pre-action-link"><span id="copycode326045" class="copy-code" data-index="326045" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre326045" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">if</span> (GetCurrentState() <span class="code-keyword">&gt;</span>= ST_MAX_STATES &amp;&amp; 
+GetCurrentState() <span class="code-keyword">&lt;</span> GetMaxStates()) { 
+ExternalEvent(ST_FAILED); 
+<span class="code-keyword">return</span>; }</pre>
+
+<p><code>GetCurrentState()</code> returns the state machine current state. <code>ST_MAX_STATES </code>is the maximum parent class <code>State </code>enum value. <code>GetMaxStates()</code> returns the maximum state value for the entire state machine up to the most-derived class. The expanded code shows that if the current state is higher than the maximum parent class state value (i.e., <code>SelfTest::ST_MAX_STATES</code>) but less than the entire state machine maximum state value (i.e., <code>CentrifugeTest::ST_MAX_STATES</code>), then transition to state <code>Failed</code>. In this way, transitions are uniformly handled if outside the range handled by the parent partial transition map. Otherwise, the partial transition map handles the state transition. <code>EVENT_IGNORED </code>and <code>CANNOT_HAPPEN&nbsp;</code>are also valid <code>PARENT_TRANSITION</code> arguments.</p>
+
+<p>Let’s say the parent <code>SelfTest::Cancel()</code> is unacceptable for some child classes. Just override or make the external event function <code>virtual </code>and use a full transition map within the derived <code>Cancel()</code> function.</p>
+
+<p>Alternative to a partial transition map, a parent class may generate external events manually without any macro support. To have external event functions within parent class hierarchy levels, use <code>GetCurrentState()</code> and <code>ExternalEvent()</code>. The <code>SelfTest </code>class has one external event function: <code>Cancel()</code>. As shown in the code below, the state machine transitions to the Failed state if the current state is not Idle.</p>
+
+<div class="pre-lang" id="premain209122"><div>C++</div><div class="pre-action-link"><span id="copycode209122" class="copy-code" data-index="209122" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre209122" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">void</span> SelfTest::Cancel()
+{
+<span class="code-keyword">if</span> (GetCurrentState() != ST_IDLE)
+ExternalEvent(ST_FAILED);
+}</pre>
+
+<p>The state machine inheritance technique expressed here does not implement a Hierarchical State Machine (HSM). An HSM has different semantics and behaviors including, among other things, a hierarchical event processing model. This feature explained here offers code reuse by factoring common states into a base class, but the state machine is still considered a traditional FSM.</p>
+
+<h2>State Function Inheritance</h2>
+
+<p>State functions can be overridden in the derived class. The derived class may call the base implementation if so desired. In this case, <code>SelfTest </code>declares and defines an Idle state:</p>
+
+<div class="pre-lang" id="premain923919"><div>C++</div><div class="pre-action-link"><span id="copycode923919" class="copy-code" data-index="923919" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre923919" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true">STATE_DECLARE(SelfTest, Idle, NoEventData)
+
+STATE_DEFINE(SelfTest,  Idle, NoEventData)
+{
+cout <span class="code-keyword">&lt;</span><span class="code-keyword">&lt;</span> <span class="code-string">"</span><span class="code-string">SelfTest::ST_Idle"</span> <span class="code-keyword">&lt;</span><span class="code-keyword">&lt;</span> endl;
+}</pre>
+
+<p><code>CentrifugeTest </code>also declares and defines the same Idle state with the same event data type.</p>
+
+<div class="pre-lang" id="premain512611"><div>C++</div><div class="pre-action-link"><span id="copycode512611" class="copy-code" data-index="512611" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre512611" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true">STATE_DECLARE(CentrifugeTest,  Idle, NoEventData)
+
+STATE_DEFINE(CentrifugeTest,   Idle, NoEventData)
+{
+cout <span class="code-keyword">&lt;</span><span class="code-keyword">&lt;</span> <span class="code-string">"</span><span class="code-string">CentrifugeTest::ST_Idle"</span> <span class="code-keyword">&lt;</span><span class="code-keyword">&lt;</span> endl;
+
+<span class="code-comment">// Call base class Idle state
+</span>    SelfTest::ST_Idle(data);    
+StopPoll();
+}</pre>
+
+<p>The <code>CentrifugeTest::ST_Idle() </code>function calls the base implementation <code>SelfTest::ST_Idle()</code>. State function inheritance is a powerful mechanism to allow each level within the hierarchy to process the same event.</p>
+
+<p>In the same way a state function is overridden, a derived class may also override a guard/entry/exit function. Within the override, you decide whether to call the base implementation or not on a case-by-case basis.</p>
+
+<h2>StateMachine Compact Class</h2>
+
+<p>If the <code>StateMachine </code>implementation is too large or too slow due to the <code>virtual</code> function and typecasting, then the compact version is available at the expense of no type checking of the member function pointers. The compact version is only 68 bytes (on Windows release build) vs. 448 bytes on the non-compact version. See <em>StateMachineCompact.zip</em> for the source files.</p>
+
+<p>Notice that we have to use <code>reinterpret_cast&lt;&gt;</code> operator within the <code>STATE_MAP_ENTRY </code>macro to cast the derived class member function pointer to a <code>StateMachine </code>member function pointer.</p>
+
+<div class="pre-lang" id="premain595881"><div>C++</div><div class="pre-action-link"><span id="copycode595881" class="copy-code" data-index="595881" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id="pre595881" style="margin-top:0;" class="lang-cplusplus notranslate" data-language="C++" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">reinterpret_cast</span><span class="code-keyword">&lt;</span>StateFunc<span class="code-keyword">&gt;</span>(stateFunc)</pre>
+
+<p>It is necessary to perform this upcast since the <code>StateMachine</code> base class has no idea what the derived class is. So, it is imperative that the entries provided to <code>STATE_MAP_ENTRY </code>are really member functions of an inheriting class and that they conform to the state function signature discussed earlier (see State Functions section). Otherwise, bad things will happen.</p>
+
+<p>On most projects, I’m not counting CPU instructions for the state execution and a few extra bytes of storage isn’t critical. The state machine portion of my projects have never been the bottleneck. So I prefer the enhanced error checking of the non-compact version.</p>
+
+<h2>Multithread Safety</h2>
+
+<p>To prevent preemption by another thread when the state machine is in the process of execution, the <code>StateMachine </code>class can use locks within the <code>ExternalEvent()</code> function. Before the external event is allowed to execute, a semaphore can be locked. When the external event and all internal events have been processed, the software lock is released, allowing another external event to enter the state machine instance.</p>
+
+<p>Comments indicate where the lock and unlock should be placed if the application is multithreaded. If using locks, each <code>StateMachine </code>object should have its own instance of a software lock. This prevents a single instance from locking and preventing all other <code>StateMachine</code> objects from executing. Note, software locks are only required if a <code>StateMachine </code>instance is called by multiple threads of control. If not, then locks are not required.</p>
+
+<p>See the article "<strong><a href="http://www.codeproject.com/Articles/1156423/Cplusplus-State-Machine-with-Threads">C++ State Machine with Threads</a></strong>" for a complete multithreaded example using the state machine presented here.</p>
+
+<h2>Alternatives</h2>
+
+<p>Occasionally, you need something more powerful to capture the behavior of a system using events and states. The version presented here is a variation of a conventional FSM. A true Hierarchical State Machine (HSM), on the other hand, can significantly simplify the solution to certain types of problems. Many good HSM projects exist ready for you to explore. But sometimes a simple FSM is all that you need.</p>
+
+<h2>Benefits</h2>
+
+<p>Implementing a state machine using this method as opposed to the old <code>switch</code> statement style may seem like extra effort. However, the payoff is in a more robust design that is capable of being employed uniformly over an entire multithreaded system. Having each state in its own function provides easier reading than a single huge switch statement, and allows unique event data to be sent to each state. In addition, validating state transitions prevents client misuse by eliminating the side effects caused by unwanted state transitions.</p>
+
+<p>I’ve used variations of this code for self-test engines, a gesture recognition library, user interface wizards, and machine automation, among other projects. This implementation offers easy use for the inheriting classes. With the macros it lets you just "turn the crank" without much thought given to the underlying mechanics of how the state engine operates. This allows you more time to concentrate on more important things, like the design of the state transitions and state function implementation.</p>
+
+<h2>References</h2>
+
+<ul>
+<li><strong><a href="https://www.codeproject.com/Articles/1275479/State-Machine-Design-in-C">State Machine Design in C </a></strong>- by David Lafreniere</li>	<li><strong><a href="http://www.codeproject.com/Articles/1156423/Cplusplus-State-Machine-with-Threads">C++ State Machine with Threads</a></strong> - by David Lafreniere</li>	<li><a href="https://www.codeproject.com/Articles/1165243/Cplusplus-State-Machine-with-Asynchronous-Multicas"><strong>C++ State Machine with Asynchronous Multicast Delegates</strong></a> - by David Lafreniere</li>	<li><strong><a href="http://www.codeproject.com/Articles/1084801/Replace-malloc-free-with-a-Fast-Fixed-Block-Memory">Replace malloc/free with a Fast Fixed Block Memory Allocator</a></strong> - by David Lafreniere</li>	<li><strong><a href="http://www.codeproject.com/Articles/1083210/An-Efficient-Cplusplus-Fixed-Block-Memory-Allocato">An Efficient C++ Fixed Block Memory Allocator</a></strong> - by David Lafreniere</li></ul>
+
+<h2>History</h2>
+
+<ul>
+<li>23<sup>rd</sup> March, 2016
+
+<ul>
+<li>First release</li>	</ul>
+</li>	<li>28<sup>th</sup> March, 2016
+<ul>
+<li>Updated attached <em>StateMachine.zip</em> to help with porting</li>	</ul>
+</li>	<li>3<sup>rd</sup> April, 2016
+<ul>
+<li>Corrected an error in figure 1</li>	</ul>
+</li>	<li>17<sup>th</sup> April, 2016
+<ul>
+<li>Updated attached <em>StateMachine.zip</em> source code to include xallocator bug fixes</li>	</ul>
+</li>	<li>26<sup>th</sup> October, 2016
+<ul>
+<li>Fixed preprocessor bug in <code>STATE_DECLARE</code> within <em>StateMachine.zip</em></li>		<li>Fixed macro bug in <code>END_STATE_MAP</code> within <em>StateMachineCompact.zip</em></li>		<li>Minor fixes to make porting code to other platforms easier</li>		<li>Updated attached <em>StateMachine.zip</em> and <em>StateMachineCompact.zip</em> source code with bug fixes</li>	</ul>
+</li>	<li>19<sup>th</sup> November, 2016
+<ul>
+<li>Added <strong>References</strong> section</li>	</ul>
+</li>	<li>16<sup>th</sup> January, 2017
+<ul>
+<li>Added the <code>EXTERNAL_EVENT_NO_HEAP_DATA</code> build option</li>		<li>Updated article and attached <em>StateMachine.zip</em> source code</li>	</ul>
+</li>	<li>17<sup>th</sup> January, 2017
+<ul>
+<li>Added partial transition map feature</li>		<li>Updated article and attached StateMachine.zip source code.</li>	</ul>
+</li>	<li>20<sup>th</sup> Feburary, 2019
+<ul>
+<li>Added reference to C language state machine article.</li>		<li>Minor article corrections.&nbsp;</li>		<li>Updated source code with minor include fix within <strong>xallocator.cpp</strong>.&nbsp;</li>	</ul>
+</li></ul>
+
+
+        </div>
+        
+
+        
+        <h2>License</h2>
+        <div id="LicenseTerms"><p>This article, along with any associated source code and files, is licensed under <a href="http://www.codeproject.com/info/cpol10.aspx" rel="license">The Code Project Open License (CPOL)</a></p></div>
+        
+
+        
+        <br>
+        
+            
+
+<div class="author-wrapper">
+
+<div class="desktop-only tablet-only" style="position:absolute; top:-30px;right:20px">
+<img id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberPhoto" class="profile-pic" src="https://www.codeproject.com/script/Membership/ProfileImages/{e1808d46-261f-48d1-9b11-c062e34ffc7a}.jpg" style="border-width:0px;transform:rotate(-1deg);">
+</div>
+
+<div style="padding-right:100px">
+<div class="subdue" style="margin-bottom:7px">Written By</div>
+
+<div class="container-member">
+<b><a id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberProfileLink" class="author" href="/Members/DavidLafreniere">David Lafreniere</a></b>
+</div>
+
+<div class="company text-nowrap">
+<span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberJobTitle"></span>
+<span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberCompany"></span>
+</div>
+
+<div class="text-nowrap">
+<span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberLocation"><img src="/script/Geo/Images/US.gif" alt="United States" width="16" height="11">&nbsp;United States</span>
+</div>
+</div>
+
+</div>
+
+<div class="description" style="padding-top:1rem">
+I've been a professional software engineer for over 20 years. When not writing code, I enjoy spending time with the family, camping and riding motorcycles around Southern California.
+</div>
+
+<div class="follow flex-container flex-extend" style="margin-top:20px">
+<div class="flex-item">
+<div id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_FollowOn">
+
+
+<a href="https://www.linkedin.com/in/lafrenieredavid"><img style="vertical-align:middle;border:0;height:24px;width:24px" alt="LinkedIn" src="/images/linkedin-32.png"></a> 
+</div>
+</div>
+<div class="flex-item-tight" style="margin-right:25px">
+
+</div>
+</div>
+
+<br>
+        
+        
+
+        <div class="clearfix"></div>
+
+        <div style="padding-top:8px">
+            
+        </div>
+
+    
+
+    
+    </form>
+
+</div>
+
+</body>
+</html>
